@@ -11,7 +11,7 @@ begin
     gem.authors           = ["Blake Carlson"]
 
     gem.add_dependency('rack')
-    gem.add_dependency('mongo', '0.19.1')
+    gem.add_dependency('mongo', '>= 0.19.1')
 
     gem.add_development_dependency('mocha', '0.9.4')
     gem.add_development_dependency('rack-test')
