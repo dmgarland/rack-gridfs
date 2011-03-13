@@ -25,7 +25,7 @@ class Rack::GridFSTest < Test::Unit::TestCase
 
   def load_artifact(filename, key, content_type)
     contents = File.read(File.join(File.dirname(__FILE__), 'artifacts', filename))
-    Mongo::Grid.new(db).put(contents, filename, :content_type => content_type)
+    Mongo::Grid.new(db).put(contents, { :filename => filename, :content_type => content_type})
   end
 
   context "Rack::GridFS" do
