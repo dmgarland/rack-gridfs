@@ -11,6 +11,10 @@ For example,
   
 If the prefix is "gridfs", then the key will be be "someobjectid".
 
+This repo works against the Mongo 1.2.4 driver, so if you're seeing problems
+with uninitialised constants, particularly BSON:ObjectID and so on, you might 
+need this.
+
 == Installation
 
   gem install jnunemaker--rack-gridfs
