@@ -4,7 +4,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{jnunemaker-rack-gridfs}
+  s.name = %q{dmgarland-rack-gridfs}
   s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "example/gridfs_server.rb",
-    "jnunemaker-rack-gridfs.gemspec",
+    "dmgarland-rack-gridfs.gemspec",
     "lib/rack/gridfs.rb",
     "test/artifacts/3wolfmoon.jpg",
     "test/artifacts/test.html",

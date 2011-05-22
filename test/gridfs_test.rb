@@ -112,7 +112,13 @@ class Rack::GridFSTest < Test::Unit::TestCase
         get "/gridfs/#{@text_id}"
         assert_equal 'text/plain', last_response.content_type
       end
-
+      
+      should "ignore any filename suffix" do
+        get "/gridfs/#{@text_id}.txt"
+        assert_equal "Lorem ipsum dolor sit amet.", last_response.body
+        assert_equal 'text/plain', last_response.content_type
+      end
+      
       should "return HTML files stored in GridFS" do
         get "/gridfs/#{@html_id}"
         assert_match /html.*?body.*Test/m, last_response.body
