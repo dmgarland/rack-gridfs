@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name              = "jnunemaker-rack-gridfs"
+    gem.name              = "dmgarland-rack-gridfs"
     gem.summary           = "Rack middleware for creating HTTP endpoints for files stored in MongoDB's GridFS"
     gem.email             = "blake@coin-operated.net"
     gem.homepage          = "http://github.com/skinandbones/rack-gridfs"

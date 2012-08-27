@@ -26,15 +26,20 @@ module Rack
     def call(env)
       request = Rack::Request.new(env)
       if request.path_info =~ /^\/#{prefix}\/(.+)$/
-        gridfs_request($1)
+        gridfs_request($1, request)
       else
         @app.call(env)
       end
     end
 
-    def gridfs_request(id)
+    def gridfs_request(id, request)
       file = Mongo::Grid.new(db).get(BSON::ObjectId.from_string(id.split(".").first))
-      [200, {'Content-Type' => file.content_type}, [file.read]]
+      
+      if request.env['HTTP_IF_NONE_MATCH'] == file.files_id.to_s || request.env['HTTP_IF_MODIFIED_SINCE'] == file.upload_date.httpdate
+        [304, {'Content-Type' => 'text/plain', 'Etag' => file.files_id.to_s}, ['Not modified']]
+      else
+        [200, {'Content-Type' => file.content_type, 'Last-Modified' => file.upload_date.httpdate, 'Etag' => file.files_id.to_s}, [file.read]]
+      end      
     rescue Mongo::GridError, BSON::InvalidObjectId
       [404, {'Content-Type' => 'text/plain'}, ['File not found.']]
     end
