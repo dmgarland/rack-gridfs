@@ -4,13 +4,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{dmgarland-rack-gridfs}
-  s.version = "0.3.2"
+  s.name = "dmgarland-rack-gridfs"
+  s.version = "0.3.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Blake Carlson"]
-  s.date = %q{2011-05-22}
-  s.email = %q{blake@coin-operated.net}
+  s.date = "2012-08-27"
+  s.email = "blake@coin-operated.net"
   s.extra_rdoc_files = [
     "LICENSE",
     "README.rdoc"
@@ -29,14 +29,10 @@ Gem::Specification.new do |s|
     "test/gridfs_test.rb",
     "test/test_helper.rb"
   ]
-  s.homepage = %q{http://github.com/skinandbones/rack-gridfs}
+  s.homepage = "http://github.com/skinandbones/rack-gridfs"
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.4.2}
-  s.summary = %q{Rack middleware for creating HTTP endpoints for files stored in MongoDB's GridFS}
-  s.test_files = [
-    "test/gridfs_test.rb",
-    "test/test_helper.rb"
-  ]
+  s.rubygems_version = "1.8.24"
+  s.summary = "Rack middleware for creating HTTP endpoints for files stored in MongoDB's GridFS"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
